@@ -36,7 +36,7 @@ public class Student extends Person {
 
     public Map<String, Integer> getRating() throws MyException {
         if (rating.isEmpty()) {
-            throw new MyException("No subject");
+            throw new MyException("Student has no subjects");
         }
         return rating;
     }

@@ -14,7 +14,10 @@ public class Faculty {
     }
 
 
-    public List<Group> getGroups() {
+    public List<Group> getGroups() throws MyException {
+        if (groups.isEmpty()){
+            throw new MyException("Groups are not in a faculty");
+        }
         return groups;
     }
 

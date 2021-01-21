@@ -12,7 +12,10 @@ public class University {
         this.name = name;
     }
 
-    public List<Faculty> getFaculties() {
+    public List<Faculty> getFaculties() throws MyException {
+        if (faculties.isEmpty()){
+            throw  new MyException("Faculties are not in university");
+        }
         return faculties;
     }
 

@@ -12,7 +12,10 @@ public class Group {
         this.name = name;
     }
 
-    public List<Student> getStudents() {
+    public List<Student> getStudents() throws MyException {
+        if (students.isEmpty()) {
+            throw new MyException("Students are not in a group");
+        }
         return students;
     }
 

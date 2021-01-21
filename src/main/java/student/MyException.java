@@ -1,7 +1,7 @@
 package student;
 
 public class MyException extends Exception {
-    private String message;
+    public String message;
 
     public MyException(String message) {
         this.message = message;
