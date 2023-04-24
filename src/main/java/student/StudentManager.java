@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class StudentManager {
 
-    //Посчитать средний балл по всем предметам студента
+    //Calculate the average score for all student subjects
     public static Double getAverageRatingInAllSubjectsOfStudent(Student students, int min, int max) throws MyException {
         double averageRating = 0;
         for (Integer mark : students.getRating().values()) {
@@ -15,9 +15,9 @@ public class StudentManager {
         return averageRating;
     }
 
-    //Посчитать средний балл по конкретному предмету в конкретной группе и на конкретном факультете
+    //Calculate the average score for a particular subject in a particular group and at a particular faculty
     public static Double getAverageRatingInSubjectInGroupInFaculty(String subject, Faculty faculty) throws MyException {
-        //из факультета мы извлекаем лист групп
+        //from the faculty we extract the list of groups
         return faculty.
                 getGroups()
                 .stream()
@@ -42,11 +42,11 @@ public class StudentManager {
 
     }
 
-    //  Посчитать средний балл по предмету для всего университета
+    //  Calculate the average grade in the subject for the entire university
     public static Double getAverageRatingInSubjectInAllUniversity(String subject, University university) throws MyException {
         return university
                 .getFaculties()
-                .stream()//используем flatmap для того чтобы раскрыть из каждой группы стрим со студентами
+                .stream()//use flatmap to uncover a stream with students from each group
                 .flatMap(faculty -> {
                     try {
                         return faculty.getGroups().stream();
